@@ -61,16 +61,6 @@ void Error_Handler(void);
 #define BTN_0_GPIO_Port GPIOC
 #define BTN_1_Pin GPIO_PIN_14
 #define BTN_1_GPIO_Port GPIOC
-#define BUZZER_Pin GPIO_PIN_0
-#define BUZZER_GPIO_Port GPIOA
-#define MPU6500_CS_Pin GPIO_PIN_4
-#define MPU6500_CS_GPIO_Port GPIOA
-#define MPU6500_INT_Pin GPIO_PIN_4
-#define MPU6500_INT_GPIO_Port GPIOC
-#define DR16_NC_Pin GPIO_PIN_10
-#define DR16_NC_GPIO_Port GPIOB
-#define DR16_RX_Pin GPIO_PIN_11
-#define DR16_RX_GPIO_Port GPIOB
 #define LED1_Pin GPIO_PIN_12
 #define LED1_GPIO_Port GPIOB
 #define LED2_Pin GPIO_PIN_13

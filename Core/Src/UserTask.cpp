@@ -13,15 +13,17 @@
 #include "main.h"
 #include "task.h"
 
-StackType_t uxMainTaskStack[configMINIMAL_STACK_SIZE];
-StaticTask_t xMainTaskTCB;
+StackType_t uxTask0Stack[configMINIMAL_STACK_SIZE];
+StaticTask_t xTask0TCB;
 
-void mainTask(void *pvPara) {
-  HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_SET);
+void task0(void *pvPara) {
+
 
   while (true) {
-
-    vTaskDelay(1);
+    HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_SET);
+    vTaskDelay(60);
+    HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_RESET);
+    vTaskDelay(940);
   }
 }
 
@@ -30,8 +32,8 @@ void mainTask(void *pvPara) {
  * @todo  Add your own task in this file
  */
 void startUserTasks() {
-  xTaskCreateStatic(mainTask, "testTask", configMINIMAL_STACK_SIZE, NULL, 0,
-                    uxMainTaskStack, &xMainTaskTCB);
+  xTaskCreateStatic(task0, "task0", configMINIMAL_STACK_SIZE, NULL, 0,
+                    uxTask0Stack, &xTask0TCB);
   /**
    * @todo Add your own task here
    */
