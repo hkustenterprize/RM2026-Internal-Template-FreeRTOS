@@ -15,10 +15,7 @@
 
 StackType_t uxTask0Stack[configMINIMAL_STACK_SIZE];
 StaticTask_t xTask0TCB;
-
 void task0(void *pvPara) {
-
-
   while (true) {
     HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_SET);
     vTaskDelay(60);

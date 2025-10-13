@@ -513,7 +513,7 @@ void xPortSysTickHandler( void )
             }
         }
         portENABLE_INTERRUPTS();
-        traceISR_EXIT_TO_SCHEDULER();
+        traceISR_EXIT();
     }
 }
 /*-----------------------------------------------------------*/
