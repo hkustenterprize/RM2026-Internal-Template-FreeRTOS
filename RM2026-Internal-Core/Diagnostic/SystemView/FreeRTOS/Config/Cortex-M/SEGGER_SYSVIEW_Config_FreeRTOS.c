@@ -66,7 +66,7 @@ extern const SEGGER_SYSVIEW_OS_API SYSVIEW_X_OS_TraceAPI;
 #define SYSVIEW_APP_NAME        MACRO_TO_STRING(APP_NAME)
 
 // The target device name
-#define SYSVIEW_DEVICE_NAME     "RM2023 Internal Demo Board"
+#define SYSVIEW_DEVICE_NAME     "ENTERPRIZE RM2026 Internal Demo Board"
 
 // Frequency of the timestamp. Must match SEGGER_SYSVIEW_GET_TIMESTAMP in SEGGER_SYSVIEW_Conf.h
 #define SYSVIEW_TIMESTAMP_FREQ  (configCPU_CLOCK_HZ)
@@ -86,7 +86,7 @@ extern const SEGGER_SYSVIEW_OS_API SYSVIEW_X_OS_TraceAPI;
 */
 static void _cbSendSystemDesc(void) {
   SEGGER_SYSVIEW_SendSysDesc("N="SYSVIEW_APP_NAME",D="SYSVIEW_DEVICE_NAME",O=FreeRTOS");
-  SEGGER_SYSVIEW_SendSysDesc("I#15=SysTick, I#36=CAN_RX, I#53=DR16, I#54=UART2");
+  SEGGER_SYSVIEW_SendSysDesc("I#15=SysTick");
 }
 
 /*********************************************************************

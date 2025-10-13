@@ -103,9 +103,9 @@ int main(void)
   // Write the option bytes, !!DO NOT MODIFY!!
   FLASH_OBProgramInitTypeDef pOBInit;
   HAL_FLASHEx_OBGetConfig(&pOBInit);
-  if (!((pOBInit.USERConfig & FLASH_OPTR_nSWBOOT0_Msk) == OB_BOOT0_FROM_OB &&
+  if (!((pOBInit.USERConfig & FLASH_OPTR_nSWBOOT0_Msk) == OB_BOOT0_FROM_PIN &&
         (pOBInit.USERConfig & FLASH_OPTR_nBOOT0_Msk) == OB_nBOOT0_SET &&
-        (pOBInit.USERConfig & FLASH_OPTR_NRST_MODE_Msk) == OB_NRST_MODE_GPIO &&
+        (pOBInit.USERConfig & FLASH_OPTR_NRST_MODE_Msk) == OB_NRST_MODE_INPUT_OUTPUT &&
         (pOBInit.USERConfig & FLASH_OPTR_BOR_LEV_Msk) == OB_BOR_LEVEL_4 &&
         (pOBInit.USERConfig & FLASH_OPTR_nRST_STOP_Msk) == OB_STOP_RST &&
         (pOBInit.USERConfig & FLASH_OPTR_nRST_STDBY_Msk) == OB_STANDBY_RST &&
@@ -120,11 +120,11 @@ int main(void)
       pOBInit.USERConfig = 0;
 
       pOBInit.USERType |= OB_USER_nSWBOOT0;
-      pOBInit.USERConfig |= OB_BOOT0_FROM_OB;
+      pOBInit.USERConfig |= OB_BOOT0_FROM_PIN;
       pOBInit.USERType |= OB_USER_nBOOT0;
       pOBInit.USERConfig |= OB_nBOOT0_SET;
       pOBInit.USERType |= OB_USER_NRST_MODE;
-      pOBInit.USERConfig |= OB_NRST_MODE_GPIO;
+      pOBInit.USERConfig |= OB_NRST_MODE_INPUT_OUTPUT;
       pOBInit.USERType |= OB_USER_BOR_LEV;
       pOBInit.USERConfig |= OB_BOR_LEVEL_4;
       pOBInit.USERType |= OB_USER_nRST_STOP;

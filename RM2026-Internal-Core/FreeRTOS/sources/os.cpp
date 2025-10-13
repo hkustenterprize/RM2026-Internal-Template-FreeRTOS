@@ -19,14 +19,6 @@ extern void startUserTasks();  // user should implement this cpp function in Use
 
 extern "C"
 {
-    static void doNothing(void)
-    { /* do nothing */
-    }
-
-    typedef void(SysTickHandle_t)(void);
-
-    SysTickHandle_t *RTOSSysTickHandler = doNothing;  // do nothing before initialization to avoid hardfault
-
     void startRTOS(void)
     {
         traceSTART();
@@ -34,11 +26,6 @@ extern "C"
         configASSERT(xTaskGetSchedulerState() == taskSCHEDULER_NOT_STARTED);  // already started?
 
         startUserTasks();  // create user tasks
-
-        configASSERT(NVIC_GetPriority(SVCall_IRQn) == HIGHEST_PRIORITY);  // SVCall_IRQn should be the highest priority
-
-        extern void xPortSysTickHandler(void);
-        RTOSSysTickHandler = xPortSysTickHandler;  // set RTOSSysTickHandler to xPortSysTickHandler
 
         vTaskStartScheduler();  // start FreeRTOS scheduler
 

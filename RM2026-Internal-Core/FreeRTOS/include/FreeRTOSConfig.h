@@ -46,7 +46,7 @@
  */
 #ifndef APP_NAME
 #warning "APP_NAME is not defined"  // This macro is defined in the makefile as TARGET
-#define APP_NAME RM2023_H
+#define APP_NAME RM2026_Internal_Template
 #endif  // APP_NAME
 
 /**
