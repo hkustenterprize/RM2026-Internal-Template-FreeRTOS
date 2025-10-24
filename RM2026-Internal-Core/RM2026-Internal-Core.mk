@@ -6,8 +6,7 @@ CPP_SOURCES += \
 $(wildcard $(CORE_DIR)/Drivers/*.cpp)
 
 C_INCLUDES += \
--I$(CORE_DIR)/Drivers \
--I$(CORE_DIR)/Control
+-I$(CORE_DIR)/Drivers
 
 SystemView_PATH = $(CORE_DIR)/Diagnostic/SystemView
 include $(SystemView_PATH)/SystemView.mk
