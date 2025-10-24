@@ -12,7 +12,7 @@ git clone git@github.com:hkustenterprize/RM2026-Internal-Template-FreeRTOS.git
 enter the directory with:
 
 ``` bash
-cd RM2026-Internal-Template
+cd .\RM2026-Internal-Template-FreeRTOS\
 ```
 
 compile with Makefile
